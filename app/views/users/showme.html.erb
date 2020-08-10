@@ -1,0 +1,39 @@
+<div class="limiter">
+  <div class="nav-wrap">
+    <div class="page-title">
+      Thong tin ca nhan
+    </div>
+    <div class = "top-nav">
+      Xin chao, <%= @user.uid %>! &nbsp; &nbsp;
+      <%= link_to 'Cap nhat', edit_user_path(@user) %> &nbsp; &nbsp; 
+      <%= link_to 'Tro lai', '/sessions/show' %> &nbsp; &nbsp;
+      <%= link_to 'Thoat',  session_path(@user), method: :delete %> 
+    </div>
+  </div>
+  <div class="short-table-wrap">
+    <table>
+      <tr class="table-head">
+        <th class = "column1">UID</th>
+        <th class = "column2">Password</th>
+        <th class = "column3">Chinh thuc</th>
+        <th class = "column4">Vi tri</th>
+        <th class = "column5">Ma so thue</th>
+        <th class = "column6">Bat dau</th>
+        <th class = "column7">Ket thuc</th>
+      </tr>
+      <tr class="table-body">
+        <td class = "column1"><%= @user.uid %></td>
+        <td class = "column2"><%= @user.password %></td>
+        <td class = "column3"><%= @user.official %></td>
+        <td class = "column4"><%= @user.position %></td>
+        <td class = "column5"><%= @user.taxcode %></td>
+        <td class = "column6"><%= @user.starttime %></td>
+        <td class = "column7"><%= @user.duetime %></td>
+      </tr>
+    </table>
+    <div class="bot-nav">
+        <%= link_to 'Cap nhat', edit_user_path(@user) %> &nbsp; &nbsp;
+        <%= link_to 'Tro lai', '/sessions/show' %>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="limiter">
+  <div class="nav-wrap">
+    <div class="page-title">
+      Dang ky
+    </div>
+    <div class = "top-nav">
+      <%= link_to 'Trang chu', '/users/' %> &nbsp; &nbsp;
+      <%= link_to 'Dang nhap', '/sessions/new' %>
+    </div>
+  </div>
+  <div class="form-wrap">
+    <div class="form-core">
+      <%= form_with model: @user, local: true do |form| %>
+      <div class="form-label">
+        <%= form.label :uid %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :uid %>
+      </div>
+      <div class="form-label">
+        <%= form.label :password %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :password %>
+        </div>
+      <div class="form-label">
+        <%= form.label :official %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :official %>
+      </div>
+      <div class="form-label">
+        <%= form.label :position %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :position %>
+      </div>
+      <div class="form-label">
+        <%= form.label :taxcode %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :taxcode %>
+      </div>
+      <div class="form-label">
+        <%= form.label :starttime %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :starttime %>
+      </div>
+      <div class="form-label">
+        <%= form.label :duetime %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :duetime %>        
+      </div>        
+      <div class="form-button">
+        <%= form.submit "Dang ky" %>
+      </div>
+      <% end %>
+      <div class="bot-nav">
+        <%= link_to 'Trang chu', '/users/' %> &nbsp; &nbsp;
+        <%= link_to 'Dang nhap', '/sessions/new' %>
+      </div>
+    </div>
+  </div>
+</div>

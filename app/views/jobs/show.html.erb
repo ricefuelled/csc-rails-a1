@@ -1,0 +1,32 @@
+<div class="limiter">
+  <div class="nav-wrap">
+    <div class="page-title">
+      Danh sach cong viec
+    </div>
+    <div class = "top-nav">
+      Xin chao, <%= @job0.staff %> &nbsp; &nbsp;
+      <%= link_to 'Bao cao', '/jobs/new' %> &nbsp; &nbsp;
+      <%= link_to 'Tro lai', '/sessions/show' %>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <tr class="table-head">
+        <th class = "column10">Order</th>
+        <th class = "column11">Date</th>
+        <th class = "column12">Income</th>
+        <th class = "column13">Description</th>
+        <th class = "column14">Tuy chon</th>
+      </tr>
+      <% @job.each do |job| %>
+      <tr class="table-body">
+        <td class = "column10"><%= job.order %></td>
+        <td class = "column11"><%= job.date %></td>
+        <td class = "column12"><%= job.income %></td>
+        <td class = "column13"><%= job.description %></td>
+        <td class = "column14"><%= link_to 'Xoa', job_path(job), method: :delete, data: { confirm: 'Chac chua?' } %></td>
+      </tr>
+      <% end %>  
+    </table>
+  </div>
+</div>

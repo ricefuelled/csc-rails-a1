@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: 
+  staff: MyString
+  date: 
+  income: 
+  description: MyString
+
+two:
+  order: 
+  staff: MyString
+  date: 
+  income: 
+  description: MyString

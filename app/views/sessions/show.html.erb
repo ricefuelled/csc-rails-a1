@@ -1,0 +1,28 @@
+<div class="limiter">
+  <div class="nav-wrap">
+    <div class="page-title">
+      Nhan vien
+    </div>
+    <div class = "top-nav">
+      Xin chao, <%= @user.uid %>! &nbsp; &nbsp;
+      <%= link_to 'Thong tin', user_showme_path(@user) %> &nbsp; &nbsp;
+      <%= link_to 'Thoat',  session_path(@user), method: :delete %>
+    </div>
+  </div>
+  <div class="shorter-form-wrap">
+    <div class="form-title">
+      Tuy chon
+    </div>
+    <div class="form-core">
+      <div class = "command-button">
+        <%= link_to 'Bao cao cong viec', '/jobs/new' %>
+      </div>
+      <div class = "command-button">
+        <%= link_to 'Kiem tra thong tin', user_showme_path(@user) %>
+      </div>
+      <div class = "command-button">
+        <%= link_to 'Danh sach cong viec', '/jobs/show' %>
+      </div>
+    </div>
+  </div>
+</div>

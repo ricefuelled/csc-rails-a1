@@ -1,0 +1,52 @@
+<div class="limiter">
+  <div class="nav-wrap">
+    <div class="page-title">
+      Bao cao
+    </div>
+    <div class = "top-nav">
+      <%= link_to 'Tro lai', '/sessions/show' %>
+    </div>
+  </div>
+  <div class="form-wrap">
+    <div class="form-core">
+      <%= form_with model: @job, url: jobs_path, local: true do |form| %>
+      <div class="form-label">
+        <%= form.label :order %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :order %>
+      </div>
+      <div class="form-label">
+        <%= form.label :staff %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :staff %>
+        </div>
+      <div class="form-label">
+        <%= form.label :date %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :date %>
+      </div>
+      <div class="form-label">
+        <%= form.label :income %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :income %>
+      </div>
+      <div class="form-label">
+        <%= form.label :description %>
+      </div>
+      <div class="form-input">
+        <%= form.text_field :description %>
+      </div>
+      <div class="form-button">
+        <%= form.submit "Bao cao" %>
+      </div>
+      <% end %>
+      <div class="bot-nav">
+        <%= link_to 'Tro lai', '/sessions/show' %>
+      </div>
+    </div>    
+  </div>
+</div>
