@@ -6,18 +6,14 @@ class SessionsController < ApplicationController
   end
   
   def create
-    if ((params[:uid] == nil) or (params[:password] == nil))
-      render :new
-    else
-      @user = User.find_by uid: params[:uid]
-      if @user == nil
-        render :new
-      elsif (@user.password == params[:password])
+    if ((params[:user][:uid] != nil) && (params[:user][:password] != nil))
+      @user = User.find_by uid: params[:user][:uid]
+      if ((@user != nil) && (@user.password == params[:user][:password]))
         session[:uid] = @user.uid #Session co san
         redirect_to session_path(session)
-      else
-        render :new
       end
+    else
+    render :new
     end
   end
   
