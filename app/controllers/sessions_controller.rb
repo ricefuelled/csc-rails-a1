@@ -6,12 +6,18 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @user = User.find_by uid: params[:user][:uid]
-    if (@user.password == params[:user][:password])
-      session[:uid] = @user.uid #Session co san
-      redirect_to session_path(session)
-    elsif
-      redirect_to '/sessions/new'
+    if ((params[:uid] == nil) or (params[:password] == nil))
+      render :new
+    else
+      @user = User.find_by uid: params[:uid]
+      if @user == nil
+        render :new
+      elsif (@user.password == params[:password])
+        session[:uid] = @user.uid #Session co san
+        redirect_to session_path(session)
+      else
+        render :new
+      end
     end
   end
   
